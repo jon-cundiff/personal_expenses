@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/user_transactions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,10 +24,24 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter App'),
-      ),
-      body: const Center(child: Text('Widget Playground')),
-    );
+        appBar: AppBar(
+          title: const Text('Flutter App'),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const <Widget>[
+              SizedBox(
+                width: double.infinity,
+                child: Card(
+                  color: Colors.blue,
+                  child: Text('Chart'),
+                  elevation: 5,
+                ),
+              ),
+              UserTransactions()
+            ],
+          ),
+        ));
   }
 }
